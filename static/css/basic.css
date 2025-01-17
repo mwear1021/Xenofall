@@ -1,0 +1,81 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 3rem;
+    margin: 0;
+    height: 100vh;
+    background: url("static/images/space-shooter.png") no-repeat center center fixed;
+    background-size: cover;
+}
+
+h1 {
+    font-family: 'Orbitron', sans-serif;
+    color: #00ffcc;
+    font-size: 70px;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+
+    /* Add an outer border for visibility */
+    -webkit-text-stroke: 2px black;
+
+    /* Glow effect to make it pop */
+    text-shadow: 0 0 20px #00ffcc, 0 0 30px #00ffcc, 0 0 40px #0099aa, 0 0 60px #006688, 0 0 80px #004466;
+    
+    /* Spacing from the game canvas */
+    margin-bottom: 20px;
+}
+
+h1:hover {
+    /* Hover effect to change color and glow */
+    color: #ff3366;
+    text-shadow: 0 0 20px #ff3366, 0 0 30px #ff3366, 0 0 50px #ff0033, 0 0 80px #ff0033;
+    -webkit-text-stroke: 2px black;
+    transition: all 0.3s ease-in-out;
+}
+
+.game-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 20px;
+    border: 5px solid lightgray;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+canvas {
+    display: block;
+    border-radius: 10px;
+}
+
+/* Exit Button Styling */
+.exit-button {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    color: #ffffff;
+    background-color: rgba(255, 0, 0, 0.8);
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: 'Orbitron', sans-serif;
+    border-radius: 5px;
+    border: 2px solid #ff0000;
+    box-shadow: 0 0 15px rgba(255, 0, 0, 0.8);
+    cursor: pointer;
+    z-index: 1000; /* Ensure it's above the game canvas */
+    transition: all 0.3s ease-in-out;
+}
+
+/* Exit Button Hover Effect */
+.exit-button:hover {
+    background-color: #ff3366;
+    color: #ffffff;
+    box-shadow: 0 0 30px #ff3366, 0 0 60px #ff0033;
+    border-color: #ff0033;
+}

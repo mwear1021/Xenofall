@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block title %}Sign-Up{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/form.css') }}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alata&family=Alumni+Sans+Pinstripe:ital@0;1&family=Barriecito&family=Imperial+Script&family=Rye&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+<script src="{{ url_for('static', filename='js/about.js')}}"></script>
+<!-- <header>
+    <nav id="navbar">
+        <div>GamingLLC</div>
+        <ul class="nav-links">
+            <li class="confirm_selection"><a href="{{ url_for('home') }}">Home</a></li>
+            <li class="confirm_selection"><a href="{{ url_for('about') }}">About</a></li>
+            <li class="confirm_selection"><a href="{{ url_for('leaderboard') }}">Leader Board</a></li>
+        </ul>
+    </nav>
+</header> -->
+
+<canvas id="canvas"></canvas>
+
+<form id="form" action="{{ url_for('signup') }}" method="POST" style="border:1px solid #ccc">
+    <div class="container">
+        <h1>Sign <span class="designer">Up</span></h1>
+        <p id="styleone">Please fill in this form to create an account.</p>
+        <hr>
+
+        <label id="styleone" for="username"><b>Username</b></label>
+        <input type="text" placeholder="Enter Username" name="username" required>
+
+        <label id="styleone" for="email"><b>Email</b></label>
+        <input type="email" placeholder="Enter Email" name="email" required>
+
+        <label id="styleone" for="psw"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="password" required>
+
+        <label id="styleone" for="psw-repeat"><b>Repeat Password</b></label>
+        <input type="password" placeholder="Repeat Password" name="psw-repeat" required>
+
+        <label>
+            <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px"> Remember me
+        </label>
+
+        <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.</p>
+
+        <form action="{{ url_for('home') }}" method="get">
+            <button type="submit" class="startbutton">Get Started</button>
+        </form>
+
+        <p class="small-padding">Already have an account? Login <a href="{{ url_for('login') }}" style="color: red;">Here</a> </p>
+
+    </div>
+</form>
+
+<script src="{{ url_for('static', filename='js/form.js') }}"></script>
+{% endblock %}

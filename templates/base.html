@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Gaming App{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/homestyle.css') }}">
+</head>
+<body>
+    {% block navbar %}
+    <header>
+        <nav id="navbar">
+            <div class="padding">BINARY STARS GAMES, LLC</div>
+            <ul class="nav-links">
+                <li class="confirm_selection"><a href="{{ url_for('home') }}">Home</a></li>
+                <li class="confirm_selection"><a href="{{ url_for('about') }}">About</a></li>
+                <li class="confirm_selection"><a href="{{ url_for('leaderboard') }}">Leaderboard</a></li>
+                
+                {% if current_user.is_authenticated %}
+                <li class="confirm_selection"><a href="{{ url_for('logout') }}">Logout</a></li>
+                {% else %}
+                <li class="confirm_selection"><a href="{{ url_for('login') }}">Login</a></li>
+                <li class="confirm_selection"><a href="{{ url_for('signup') }}">Sign Up</a></li>
+                {% endif %}
+            </ul>
+        </nav>
+    </header>
+    {% endblock %}
+
+    <!-- Flash Messages -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            <div class="flashes">
+                {% for category, message in messages %}
+                    <div class="{{ category }}">{{ message }}</div>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    <footer id="footer">
+        <form action="{{ url_for('delete_account') }}" method="POST" class="delete-form" onsubmit="return confirm('Are you sure you want to delete your account? This action cannot be undone.')">
+            <button type="submit" class="delete-link">Delete Account</button>
+        </form>
+    </footer>
+</body>
+</html>

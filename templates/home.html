@@ -1,0 +1,83 @@
+{% extends "base.html" %}
+
+{% block title %}XENOFALL{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/homestyle.css') }}">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+<script type="importmap">
+    {
+        "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three@0.161/build/three.module.js",
+            "jsm/": "https://cdn.jsdelivr.net/npm/three@0.161/examples/jsm/"
+        }
+    }
+</script>
+
+<!-- <script>
+// Add fade-out effect when leaving the page
+window.addEventListener('beforeunload', function () {
+    document.body.classList.add('fade-out');
+});
+</script> -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Alata&family=Alumni+Sans+Pinstripe:ital@0;1&family=Barriecito&family=Imperial+Script&family=Rye&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet">
+
+<!-- Interactive Elements -->
+<script type="module" src="{{ url_for('static', filename='js/earth.js') }}"></script>
+<script type="module" src="{{ url_for('static', filename='js/getFresnelMat.js') }}"></script>
+<script type="module" src="{{ url_for('static', filename='js/getStarfield.js') }}"></script>
+<!-- Base.html applies to all html -->
+
+<!-- Typed.js Typing Effect -->
+<p class="dynamic"></p>
+<script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+<script>
+    let typed = new Typed(".dynamic", {
+        strings: ["XENOFALL", "XENÓN CAYENDO", "Ragrag XENO", "КСЕНОФАЛЛ", "XÉNOCHUTE", "XENO MÙA THU", "落ちてくるエイリアン", "سقوط الأجانب"],
+        typeSpeed: 200,
+        backSpeed: 200,
+        loop: true
+    });
+</script>
+
+
+<!-- Login Button -->
+<!-- {% if not session.get('user_logged_in') %} disabled {% endif %} -->
+<!-- This is the play button, it should be disabled until the person is logged in -->
+<a href="{{ url_for('game') }}">
+    <div class="button">
+        <div class="voltage-button">
+            <div class="playButtonWrapper">
+                <button id="playButton" {% if not current_user.is_authenticated %} disabled {% endif %}>Press Play!</button>
+            </div>
+
+            <!-- SVG Effects -->
+            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="234.6" height="61.3" viewBox="0 0 234.6 61.3" preserveAspectRatio="none" xml:space="preserve">
+                <filter id="glow">
+                    <fegaussianblur class="blur" result="coloredBlur" stddeviation="2"></fegaussianblur>
+                    <feTurbulence type="fractalNoise" baseFrequency="0.075" numOctaves="0.3" result="turbulence"></feTurbulence>
+                    <feDisplacementMap in="SourceGraphic" in2="turbulence" scale="30" xChannelSelector="R" yChannelSelector="G" result="displace"></feDisplacementMap>
+                    <femerge>
+                        <femergenode in="coloredBlur"></femergenode>
+                        <femergenode in="coloredBlur"></femergenode>
+                        <femergenode in="coloredBlur"></femergenode>
+                        <femergenode in="displace"></femergenode>
+                        <femergenode in="SourceGraphic"></femergenode>
+                    </femerge>
+                </filter>
+                <path class="voltage line-1" d="M 50,30 A 40,40 0 1,1 50,30" fill="transparent" stroke="#fff" stroke-width="2" filter="url(#glow)" />
+                <path class="voltage line-2" d="M10 40 L 200 40" fill="transparent" stroke="#fff" stroke-width="2" filter="url(#glow)" />
+            </svg>
+            <div class="dots">
+                <div class="dot dot-1"></div>
+                <div class="dot dot-2"></div>
+                <div class="dot dot-3"></div>
+                <div class="dot dot-4"></div>
+                <div class="dot dot-5"></div>
+            </div>
+        </div>
+    </div>
+</a>
+{% endblock %}

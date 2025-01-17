@@ -1,0 +1,21 @@
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/basic.css') }}">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+
+<h1>XENOFALL</h1>
+
+<a href="{{ url_for('home') }}" class="exit-button">Exit</a>
+
+<div class="game-container">
+    <canvas id="game"></canvas>
+</div>
+
+<style>
+    body {
+        background: url("{{ url_for('static', filename='images/space-shooter.png') }}") no-repeat center center fixed;
+        background-size: cover;
+    }
+</style>
+
+<script src="{{ url_for('static', filename='js/functional.js') }}" type="module"></script>
+{% endblock %}

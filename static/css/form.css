@@ -1,0 +1,290 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4rem;
+    /* background-image: url('static/images/space.jpg'); */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background: black;
+    color: white;
+    height: 100%;
+}
+
+.stars {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  background-color: white;
+  z-index: -1;
+}
+
+/* Navbar Styling */
+
+header {
+  width: 100%;
+  left: 0;
+  top: 0;
+  position: fixed;
+
+}
+
+#navbar {
+  /* position: fixed; */
+  /* top: 0; */
+  background-color: #000;
+  margin-bottom: 0.5rem;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+#navbar div {
+  color: white;
+  font-size: 2rem;
+  padding-left: 0.8rem;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  gap: 1.2rem;
+  padding-right: 2rem;
+}
+
+.nav-links li {
+  display: inline;
+}
+
+.nav-links a {
+  color: lightgray;
+  text-decoration: none;
+  font-size: 1.3rem;
+  padding: 0.8rem;
+  cursor: crosshair;
+  font-family: 'Orbitron', sans-serif;
+  transition: 0.8s;
+  position: relative;
+  overflow: hidden;
+
+}
+
+/* GENERAL HOVER EFFECT */
+
+.confirm_selection{
+  text-decoration: none;  
+  color: lightgrey;  
+  text-shadow: none;  
+  -webkit-transition: 500ms linear 0s;  
+  -moz-transition: 500ms linear 0s;  
+  -o-transition: 500ms linear 0s;  
+  transition: 500ms linear 0s;  
+  outline: 0 none; 
+}
+
+.confirm_selection:hover {
+  color: #fff;  
+  text-shadow: -1px 1px 8px #ffc, 1px -1px 8px #fff; 
+}
+
+/* __________________Planet Orbiting is on canvas____________________________ */
+
+#canvas {
+    position: absolute;
+    top: 50%; /* Position canvas in the center of the screen */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1; /* Ensure canvas is behind the form */
+}
+
+#form {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    justify-content: flex-start;
+    font-family: 'Orbitron', sans-serif;
+    align-items: center;
+    height: 42rem;
+    width: 34rem;
+    border: 0.8rem, solid, black;
+    border-radius: 10%;
+    margin: 2rem;
+    margin-top: 3.5rem;
+    padding: 2rem;
+    box-shadow: 0.9rem 0.9rem 0.2rem #00ffcc;
+    z-index: 1;
+    overflow: hidden;
+}
+h1 {
+  font-family: 'Orbitron', sans-serif;
+}
+
+.small-padding {
+  padding: 0.5rem;
+}
+.designer {
+  color: #00ffcc;
+  font-family: 'Orbitron', sans-serif;
+}
+
+#styleone {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: rgb(170, 155, 255);
+  z-index: -2;
+}
+
+/* The input portion of the form (Text Boxes */
+
+input {
+  background-color: #000; /* Light gray background color */
+  color: #e2dede;
+  /* border: 1px solid #ccc; Light gray border */
+  padding: 0.3rem; /* Padding inside the text box */
+  /* border-radius: 4px; Slightly rounded corners */
+  border-bottom: none;
+  width: 100%; /* Make the input field full width */
+}
+
+/* Formatting, centering of form */
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.container > h1 {
+  font-family: 'Orbitron', sans-serif;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  color: #00ffcc;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-size: 2.5rem;
+
+  /* Add an outer border for visibility */
+  -webkit-text-stroke: 1px black;
+
+  /* Glow effect to make it pop */
+  text-shadow: 0 0 20px #00ffcc, 0 0 30px #00ffcc, 0 0 40px #0099aa, 0 0 60px #006688, 0 0 80px #004466;
+}
+
+.container > p {
+    margin-bottom: 0.8rem;
+}
+.container > label {
+    margin-bottom: 0.5rem;
+}
+.container > input {
+    margin-bottom: 0.5rem;
+    border: none;
+    border-bottom: 2px solid #ff3366;
+    width: 90%;
+    height: 2rem;
+}
+
+.container > input:active {
+    background: rgb(0, 0, 211);
+    color: white;
+}
+
+/* .container > input:focus {
+    background: rgb(83, 0, 0);
+    color: white;
+} */
+
+
+
+.startbutton {
+    position: relative;
+    padding: 1rem;
+    width: 30rem;
+    background-image: linear-gradient(to right, rgb(1, 4, 172) , rgb(9, 161, 248));
+    border-radius: .3rem;
+    transition: background-image 5s ease;
+}
+
+.startbutton:hover:hover {
+    background-image: linear-gradient(to right, rgb(58, 0, 0), rgb(255, 19, 19));
+}
+
+
+/* * {box-sizing: border-box} */
+
+/* Full-width input fields */
+  /* input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+} */
+
+/* Set a style for all buttons */
+/* button {
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+button:hover {
+  opacity:1;
+} */
+
+/* Extra styles for the cancel button */
+/* .cancelbtn {
+  padding: 14px 20px;
+  background-color: #f44336;
+} */
+
+/* Float cancel and signup buttons and add an equal width */
+/* .cancelbtn, .signupbtn {
+  float: left;
+  width: 50%;
+} */
+
+/* Add padding to container elements */
+/* .container {
+  padding: 16px;
+} */
+
+/* Clear floats */
+/* .clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+} */
+
+/* Change styles for cancel button and signup button on extra small screens */
+/* @media screen and (max-width: 300px) {
+  .cancelbtn, .signupbtn {
+    width: 100%;
+  }
+} */

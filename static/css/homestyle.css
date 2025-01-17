@@ -1,0 +1,460 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+main {
+  padding-bottom: 60px; /* Add padding to prevent overlap with the footer */
+}
+.padding {
+    text-decoration: none;
+    font-size: 1.3rem;
+    padding: 0.8rem;
+    cursor: crosshair;
+    font-family: cursive;
+    transition: 0.8s;
+    position: relative;
+    overflow: hidden;
+    font-family: 'Orbitron', sans-serif;
+    color: #00ffcc;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+
+    /* Add an outer border for visibility */
+    -webkit-text-stroke: 1px black;
+
+    /* Glow effect to make it pop */
+    text-shadow: 0 0 20px #00ffcc, 0 0 30px #00ffcc, 0 0 40px #0099aa, 0 0 60px #006688, 0 0 80px #004466;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  /* background: black;
+  z-index: -15; */
+  overflow: auto;
+  z-index: -20;
+}
+
+.dynamic {
+    z-index: 9999;
+    color: #00ffcc; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    font-size: 3rem;
+    margin-top: 8rem;
+    font-family: 'Orbitron', sans-serif;
+    text-decoration: none;
+    padding: 0.8rem;
+    cursor: crosshair;
+    transition: 0.8s;
+    position: relative;
+    overflow: hidden;
+    color: #00ffcc;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+
+    /* Add an outer border for visibility */
+    -webkit-text-stroke: 1px black;
+
+    /* Glow effect to make it pop */
+    text-shadow: 0 0 20px #00ffcc, 0 0 30px #00ffcc, 0 0 40px #0099aa, 0 0 60px #006688, 0 0 80px #004466;
+
+    margin-bottom: 20px;
+}
+
+/* Page Transistion */
+
+/* body {
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+
+/* Add a fade-out class when the page is transitioning */
+.fade-out {
+  opacity: 0;
+} */
+
+#navbar {
+
+    position: relative;
+    background-color: #000;
+    display: flex;
+    justify-content: space-between;
+    z-index: 2;
+}
+
+#navbar div {
+    color: white;
+    font-size: 2rem;
+    padding-left: 0.8rem;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1.2rem;
+  padding-right: 0.5rem;
+}
+
+/* Navbar link styling */
+.nav-links li {
+  display: inline-block;
+  padding: 0 10px;
+  vertical-align: middle;
+}
+
+
+.nav-links a {
+    
+    text-decoration: none;
+    font-size: 1.3rem;
+    padding: 0.8rem;
+    cursor: crosshair;
+    font-family: 'Orbitron', sans-serif;
+    transition: 0.8s;
+    position: relative;
+    overflow: hidden;
+    font-family: 'Orbitron', sans-serif;
+    color: #ffffff;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+
+    /* Add an outer border for visibility */
+    -webkit-text-stroke: 1px black;
+
+    /* Glow effect to make it pop */
+    text-shadow: 0 0 20px #00ffcc, 0 0 30px #00ffcc, 0 0 40px #0099aa, 0 0 60px #006688, 0 0 80px #004466;
+    
+    /* Spacing from the game canvas */
+    margin-bottom: 20px;
+}
+
+.nav-links a:hover {
+  color: #ff3366;
+  text-shadow: 0 0 20px #ff3366, 0 0 30px #ff3366, 0 0 50px #ff0033, 0 0 80px #ff0033;
+  -webkit-text-stroke: 1px white;
+  transition: all 0.3s ease-in-out;
+}
+/* Transparent footer */
+#footer {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  text-align: right;
+  background-color: transparent;
+  padding: 10px 20px;
+  z-index: 1000;
+}
+
+/* Style the Delete Account button */
+#footer .delete-link {
+  all: unset;
+  font-size: 1.3rem;
+  padding: 0.8rem 1rem;
+  cursor: crosshair;
+  font-family: 'Orbitron', sans-serif;
+  color: #ffffff;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  -webkit-text-stroke: 1px black;
+  text-shadow: 0 0 20px #00ffcc, 0 0 30px #00ffcc, 0 0 40px #0099aa, 0 0 60px #006688, 0 0 80px #004466;
+}
+
+/* Hover effect for the Delete Account button */
+#footer .delete-link:hover {
+  color: #ff3366;
+  text-shadow: 0 0 10px #ff3366, 0 0 20px #ff3366, 0 0 30px #ff0033;
+  -webkit-text-stroke: 1px white;
+  transition: all 0.3s ease-in-out;
+}
+
+/* .nav-links a:hover {
+    background-color: #575757;
+    border-radius: 0.2rem;
+}
+.nav-links a:hover {
+    background-color: #2b008f;
+    border-radius: 0.2rem;
+} */
+
+/* TITLE */
+
+#title {
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin-top: 10%;
+    background: none;
+    color: lightgrey;
+}
+
+canvas {
+    position: fixed;
+    background-size: cover;
+    top: 0;
+    left: 0;
+    z-index: -1;  /* Keep it in the background */
+    width: 100%;
+    height: 100%;
+  }
+
+/* .confirm_selection {
+    -webkit-transition: text-shadow 0.2s linear;
+    -moz-transition: text-shadow 0.2s linear;
+    -ms-transition: text-shadow 0.2s linear;
+    -o-transition: text-shadow 0.2s linear;
+    transition: text-shadow 0.2s linear;
+}
+.confirm_selection:hover {
+    text-shadow: 0 0 10px red; /* replace with whatever color you want 
+}*/
+
+/* GENERAL HOVER EFFECT */
+
+.confirm_selection{
+    text-decoration: none;  
+    color: lightgrey;  
+    text-shadow: none;  
+    -webkit-transition: 500ms linear 0s;  
+    -moz-transition: 500ms linear 0s;  
+    -o-transition: 500ms linear 0s;  
+    transition: 500ms linear 0s;  
+    outline: 0 none; 
+    /* background-color:#000;  */
+    /* font-size:2em;
+    width:300px;     
+    height:100px; 
+    padding:1em; */
+}
+
+.confirm_selection:hover {
+    color: #fff;  
+    text-shadow: -1px 1px 8px rgb(187, 1, 1), 1px -1px 8px #f00000; 
+}
+
+/* Button */
+
+
+.button {
+    position: fixed;
+    bottom: 0;
+    margin-bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    border: none;
+    z-index: 1000;
+  
+
+}
+
+  .voltage-button button {
+      position:relative;
+      color:white;
+      background: #000000;
+      z-index: 1000;
+      padding:1.6rem 5rem 1.8rem 5rem;
+      border-radius:5rem;
+      z-index: 10;
+      border:5px solid #ffffff;
+      font-size:1.8rem;
+      line-height:1em;
+      letter-spacing:0.075em;
+      transition:background 0.3s;
+  }
+  .voltage-button button:hover {
+      cursor: pointer;
+      color: black;
+      border-color: #000;
+      background: #ffffff;
+      + svg, +svg + .dots {
+        opacity:1;
+
+      }
+    }
+
+    
+
+  svg {
+      display:block;
+      position:absolute;
+      top:-0.75em;
+      left:-0.25em;
+      width:calc(100% + 0.5em);
+      height:calc(100% + 1.5em);
+      pointer-events: all;
+      opacity:1;
+      transition:opacity 0.4s;
+      transition-delay:0.1s;
+    }
+  path {
+      stroke-dasharray: 100;
+      filter: url('#glow');
+      opacity: 1;
+      z-index: 1000;
+      transition: opacity 0.4s ease-in-out;
+  }
+  path.line-1 {
+      stroke:#f6de8d;
+      stroke-dashoffset: 0;
+      animation: spark-1 3s linear infinite;
+    }
+  path.line-2 {
+      stroke:#6bfeff;
+      stroke-dashoffset: 500;
+      animation: spark-2 3s linear infinite;
+    }
+
+      
+  .dots {
+      opacity:0;
+      transition:opacity 0.3s;
+      transition-delay:0.4s;
+      z-index: 9999;
+  }
+  .dot {
+      width:1rem;
+      height:1rem;
+      background:white;
+      border-radius:100%;
+      position:absolute;
+      opacity:1;
+      z-index: 9999;
+    }
+  .dot-1 {
+      top:0;
+      left:20%;
+      animation: fly-up 3s linear infinite;
+    }
+  .dot-2 {
+      top:0;
+      left:55%;
+      animation: fly-up 3s linear infinite;
+      animation-delay: 0.5s;
+    }
+  .dot-3 {
+      top:0;
+      left:80%;
+      animation: fly-up 3s linear infinite;
+      animation-delay: 1s;
+    }
+  .dot-4 {
+      bottom:0;
+      left:30%;
+      animation: fly-down 3s linear infinite;
+      animation-delay: 2.5s;
+    }
+  .dot-5 {
+      bottom:0;
+      left:65%;
+      animation: fly-down 3s linear infinite;
+      animation-delay: 1.5s;
+    }
+
+  
+  /* @keyframes spark-1 {
+    to {
+      stroke-dashoffset: -1000;
+    }
+  }
+  @keyframes spark-2 {
+    to {
+      stroke-dashoffset: -500;
+    }
+  } */
+  @keyframes spark-1 {
+    0% {
+        stroke-dashoffset: 100;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes spark-2 {
+    0% {
+        stroke-dashoffset: 100;
+    }
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+  @keyframes fly-up{
+    0% { opacity:0; transform:translateY(0) scale(0.2); }
+    5% { opacity:1; transform:translateY(-1.5rem) scale(0.4);}
+    10%,100%{ opacity:1;  transform:translateY(-3rem) scale(0.2);}
+  }
+  @keyframes fly-down {
+    0% { opacity:0; transform:translateY(0) scale(0.2); }
+    5% { opacity:1; transform:translateY(1.5rem) scale(0.4);}
+    10%,100%{ opacity:1;  transform:translateY(3rem) scale(0.2);}
+  }
+
+
+  /* Button Disabled Styling */
+
+  .voltage-button button:disabled {
+    color: red;
+    background-color: black
+  }
+
+/* _______________________________________________________________________________________________________________ */
+
+
+/* HOVER EFFECT FOR HEADER LINKS */
+
+/* .nav-links a::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background: lightgray;
+    z-index: -1;
+    transistion: 0.8s;
+
+}
+.nav-links a::after {
+
+} */
+
+/* STYLING FOR MOUSE TRAIL
+#app {
+    overflow: hidden;
+    touch-action: pan-up;
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    text-shadow: 0 0 5px #ffffff, 0 0 20px #000, 0 0 30px #000;
+  }
+  
+  #app h1 {
+    --fontSize: 60px;
+    --lineHeight: 80px;
+    width: auto;
+    height: calc(2 * var(--lineHeight));
+    line-height: var(--lineHeight);
+    margin: calc(50vh - var(--lineHeight)) auto 0;
+    font-size: var(--fontSize);
+    text-transform: uppercase;
+  }
+  
+  #app a {
+    margin-top: 10px;
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+  }
+  
+  #app canvas {
+    display: block;
+    position: fixed;
+    z-index: -1;
+    top: 0;
+  } */

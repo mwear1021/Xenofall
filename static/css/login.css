@@ -1,0 +1,238 @@
+@import url('https://rsms.me/inter/inter-ui.css');
+::selection {
+  background: #2D2F36;
+}
+::-webkit-selection {
+  background: #2D2F36;
+}
+::-moz-selection {
+  background: #2D2F36;
+}
+html {
+  overflow: hidden;
+}
+
+body {
+  background: black;
+  font-family: 'Inter UI', sans-serif;
+  height: 100%;
+  margin: 0;
+  padding: 1.5rem;
+}
+
+/* SVG body background */
+
+
+/* Styling for the lines */
+#svgback path {
+  /* stroke: blue;
+  stroke-width: 7; */
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+}
+
+/* Keyframe animations for the lines */
+@keyframes moveLine1 {
+  0% {
+      transform: translate(-100%, 0);
+  }
+  100% {
+      transform: translate(100%, 0);
+  }
+}
+
+@keyframes moveLine2 {
+  0% {
+      transform: translate(-100%, -100%);
+  }
+  50% {
+      transform: translate(0%, 0%);
+
+  }
+  100% {
+      transform: translate(100%, 100%);
+
+  }
+}
+
+@keyframes moveLine3 {
+  0% {
+      transform: translate(100%, 100%);
+  }
+  100% {
+      transform: translate(-100%, -100%);
+  }
+}
+
+/* Apply animations with different timings */
+.line1 {
+  animation: moveLine1 4s linear infinite;
+}
+
+.line2 {
+  animation: moveLine2 5s linear infinite;
+}
+
+.line3 {
+  position: absolute;
+  animation: moveLine3 7s linear infinite;
+}
+/* ___________________________________________________________________________________ */
+.page {
+  background: black;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  /* height: calc(100% - 40px); */
+  position: absolute;
+  place-content: center;
+  width: 100vw;
+  z-index: 999;
+  /* width: calc(100% - 40px); */
+}
+@media (max-width: 767px) {
+  .page {
+    height: auto;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+  }
+}
+.container {
+  display: flex;
+  height: 360px;
+  margin: 0 auto;
+  width: 640px;
+}
+@media (max-width: 767px) {
+  .container {
+    flex-direction: column;
+    height: 630px;
+    width: 320px;
+  }
+}
+.left {
+  background: white;
+  height: calc(100% - 40px);
+  top: 20px;
+  position: relative;
+  width: 50%;
+}
+@media (max-width: 767px) {
+  .left {
+    height: 100%;
+    left: 20px;
+    width: calc(100% - 40px);
+    max-height: 270px;
+  }
+}
+.login {
+  font-size: 50px;
+  font-weight: 900;
+  margin: 50px 40px 40px;
+}
+.eula {
+  color: #999;
+  font-size: 14px;
+  line-height: 1.5;
+  margin: 40px;
+}
+.right {
+  background: #474A59;
+  box-shadow: 0px 0px 40px 16px rgba(0,0,0,0.22);
+  color: #F1F1F2;
+  position: relative;
+  width: 50%;
+}
+@media (max-width: 767px) {
+  .right {
+    flex-shrink: 0;
+    height: 100%;
+    width: 100%;
+    max-height: 350px;
+  }
+}
+.right svg {
+  position: absolute;
+  width: 320px;
+}
+.right path {
+  fill: none;
+  stroke: url(#simpleGradient) ;
+  stroke-width: 5;
+  stroke-dasharray: 240 1386;
+}
+
+#svgback #backGradient {
+  stroke-dasharray: none;
+  fill: url(#backGradient);
+}
+
+.form {
+  margin: 40px;
+  position: absolute;
+}
+
+.form .startbutton {
+  margin-left: 2rem;
+  margin-bottom: 1rem;
+  background-color: #e8fffa;
+  border-radius: 0.5rem;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  font-size: 1.5rem;
+  font-weight: 500;
+  width: 11rem;
+  height: 6rem;
+
+}
+
+
+label {
+  color:  #c2c2c5;
+  display: block;
+  font-size: 14px;
+  height: 16px;
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+input {
+  background: transparent;
+  border: 0;
+  color: #f2f2f2;
+  font-size: 20px;
+  height: 30px;
+  line-height: 30px;
+  outline: none !important;
+  width: 100%;
+}
+input::-moz-focus-inner { 
+  border: 0; 
+}
+#submit {
+  color: #00001b;
+  margin-top: 40px;
+  transition: color 300ms;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+#submit:focus {
+  color: #f2f2f2;
+}
+#submit:active {
+  color: #d0d0d2;
+}
+
+.small-padding {
+  padding-left: 2rem;
+  padding-bottom: 1rem;
+  font-size: 0.8rem;
+  font-family: fantasy;
+}
+
+#navbar {
+  padding: 0;
+  margin-bottom: 3.5rem;
+  margin-top: 0;
+}

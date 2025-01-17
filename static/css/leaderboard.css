@@ -1,0 +1,117 @@
+body {
+    background: black;
+
+}
+
+.stars {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    background-color: white;
+    z-index: -1;
+  }
+
+table {
+    width: 75%;
+    height: 50%;
+    margin-top: 10%;
+    margin-left: 10%;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    background-color: #111;
+    color: white;
+    box-shadow: 10px 10px 20px rgba(230, 1, 1, 0.7);
+}
+
+.class {
+    text-align: center;
+    justify-content: center;
+    
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #444;
+}
+
+/* Podium Styles */
+.podium {
+    background: linear-gradient(135deg, #000046, #1CB5E0);
+    border-radius: 8px;
+    font-weight: bold;
+}
+
+.podium-1 {
+    background: linear-gradient(100deg, #ffcc00, #000000); /* Gold */
+    animation: slideIn 2.5s ease-in 4s forwards;
+    opacity: 0;
+    /* transform: scale(1.1); */
+}
+
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateX(100%);
+        
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.podium-2 {
+    background: linear-gradient(135deg, #a5a5a5, #000000); /* Silver */
+    animation: slideInTwo 2.5s ease-in 3s forwards;
+    opacity: 0;
+    /* transform: scale(1.05); */
+}
+
+@keyframes slideInTwo {
+    0% {
+        opacity: 0;
+        transform: translateX(100%);
+        
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.podium-3 {
+    background: linear-gradient(135deg, #b87333, #000000); /* Bronze */
+    animation: slideInThree 2.5s ease-in 2s forwards;
+    opacity: 0;
+    /* transform: scale(1.03); */
+}
+
+@keyframes slideInThree {
+    0% {
+        opacity: 0;
+        transform: translateX(100%);
+        
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.others {
+    background: rgba(255, 255, 255, 0.315);
+    color: black;
+
+}
+
+/* Styling for ranks below 3 */
+/* tbody tr:not(.podium) {
+    background: #333;
+} */
+
+/* Hover effect for all rows */
+tr:hover {
+    background-color: #444;
+    cursor: pointer;
+}

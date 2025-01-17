@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+
+{% block title %}Survive Leader Board{% endblock %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/leaderboard.css') }}">
+<script src="{{ url_for('static', filename='js/about.js')}}"></script>
+
+<!-- Podium for the top 3 -->
+<table>
+    <thead>
+        <tr>
+            <th class="center" colspan="3">LEADERBOARD</th>
+        </tr>
+        <tr>
+            <th>Rank</th>
+            <th>Username</th>
+            <th>Score</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for username, score in leaderboard %}
+            {% if loop.index <= 3 %}
+                <tr class="podium podium-{{ loop.index }}">
+                    <td>{{ loop.index }}</td>
+                    <td>{{ username }}</td>
+                    <td>{{ score }}</td>
+                </tr>
+            {% else %}
+                <tr class="others">
+                    <td>{{ loop.index }}</td>
+                    <td>{{ username }}</td>
+                    <td>{{ score }}</td>
+                </tr>
+            {% endif %}
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
